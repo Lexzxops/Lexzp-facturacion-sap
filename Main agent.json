@@ -8,7 +8,7 @@
         ],
         "additionalFields": {}
       },
-      "id": "eca4420a-31be-4d23-a44c-9d9d9c29f718",
+      "id": "NODE_TELEGRAM_TRIGGER",
       "name": "Telegram Trigger",
       "type": "n8n-nodes-base.telegramTrigger",
       "typeVersion": 1,
@@ -16,11 +16,11 @@
         -288,
         96
       ],
-      "webhookId": "bot-financiero",
+      "webhookId": "WEBHOOK_ALIAS_REDACTED",
       "credentials": {
         "telegramApi": {
-          "id": "J5PBH2u3R3MdtuUv",
-          "name": "ECONTROL"
+          "id": "CRED_TELEGRAM_API_ID_REDACTED",
+          "name": "TELEGRAM_CRED_NAME_REDACTED"
         }
       }
     },
@@ -31,7 +31,7 @@
         "workflowId": "={{ $workflow.id }}_proyectos",
         "specifyInputSchema": true
       },
-      "id": "f96877c0-21a2-4e6b-b67e-c89ed715747a",
+      "id": "NODE_TOOL_PROYECTOS",
       "name": "Tool: Proyectos",
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 1.1,
@@ -47,7 +47,7 @@
         "workflowId": "={{ $workflow.id }}_tesoreria",
         "specifyInputSchema": true
       },
-      "id": "cd31db04-7e3f-4247-91c6-3b925e93df57",
+      "id": "NODE_TOOL_TESORERIA",
       "name": "Tool: Tesorería",
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 1.1,
@@ -63,7 +63,7 @@
         "workflowId": "={{ $workflow.id }}_stock",
         "specifyInputSchema": true
       },
-      "id": "0222ab51-3e4e-4739-8dab-7fba35b0c320",
+      "id": "NODE_TOOL_STOCK",
       "name": "Tool: Stock",
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 1.1,
@@ -80,7 +80,7 @@
           "parse_mode": "HTML"
         }
       },
-      "id": "71a61676-4bc6-4841-853f-56d0554b3f33",
+      "id": "NODE_SEND_REPLY",
       "name": "Enviar Respuesta",
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1,
@@ -88,11 +88,11 @@
         880,
         80
       ],
-      "webhookId": "1a476e2a-a664-487c-b1ba-bd29782f24cf",
+      "webhookId": "WEBHOOK_ID_REDACTED",
       "credentials": {
         "telegramApi": {
-          "id": "J5PBH2u3R3MdtuUv",
-          "name": "ECONTROL"
+          "id": "CRED_TELEGRAM_API_ID_REDACTED",
+          "name": "TELEGRAM_CRED_NAME_REDACTED"
         }
       }
     },
@@ -108,7 +108,7 @@
         512,
         -64
       ],
-      "id": "a47d2ee5-3ebc-45f1-acc7-1f7aa88f78a3",
+      "id": "NODE_MEMORY_ORQUESTADOR",
       "name": "Simple Memory"
     },
     {
@@ -122,9 +122,9 @@
           },
           "conditions": [
             {
-              "id": "8dd8b3b6-f997-44e1-941d-e63a2d608e6e",
+              "id": "COND_ALLOWLIST_1",
               "leftValue": "={{ $json.message.from.id }}",
-              "rightValue": "1591779497",
+              "rightValue": "TELEGRAM_USER_ID_REDACTED_1",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -132,9 +132,9 @@
               }
             },
             {
-              "id": "7d1ef4de-c7d4-418f-ac99-4b5e39e0300f",
+              "id": "COND_ALLOWLIST_2",
               "leftValue": "={{ $json.message.from.id }}",
-              "rightValue": "6216726733",
+              "rightValue": "TELEGRAM_USER_ID_REDACTED_2",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -153,7 +153,7 @@
         0,
         96
       ],
-      "id": "249c2081-ae3e-4791-8452-da62d577660b",
+      "id": "NODE_VALIDATE_USER",
       "name": "Validar user"
     },
     {
@@ -164,7 +164,7 @@
           "parse_mode": "HTML"
         }
       },
-      "id": "502bddc2-eb4b-432b-b263-2f18893c71a9",
+      "id": "NODE_UNAUTHORIZED",
       "name": "usuario no autorizado",
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1,
@@ -172,11 +172,11 @@
         -16,
         -96
       ],
-      "webhookId": "1a476e2a-a664-487c-b1ba-bd29782f24cf",
+      "webhookId": "WEBHOOK_ID_REDACTED",
       "credentials": {
         "telegramApi": {
-          "id": "J5PBH2u3R3MdtuUv",
-          "name": "ECONTROL"
+          "id": "CRED_TELEGRAM_API_ID_REDACTED",
+          "name": "TELEGRAM_CRED_NAME_REDACTED"
         }
       }
     },
@@ -192,7 +192,7 @@
         -1376,
         832
       ],
-      "id": "65cb636d-89cd-4f71-8359-cd7f97562b60",
+      "id": "NODE_MEMORY_FACTURACION",
       "name": "Simple Memory1"
     },
     {
@@ -206,12 +206,12 @@
         400,
         -96
       ],
-      "id": "c3c43869-c438-4cca-b96e-5e782bd1eb6d",
+      "id": "NODE_LLM_ORQUESTADOR",
       "name": "chatgpt oss",
       "credentials": {
         "openRouterApi": {
-          "id": "YdkBWfQNuPib1I01",
-          "name": "OpenRouter account"
+          "id": "CRED_OPENROUTER_ID_REDACTED",
+          "name": "OPENROUTER_CRED_NAME_REDACTED"
         }
       }
     },
@@ -226,7 +226,7 @@
         -912,
         640
       ],
-      "id": "af8fdebd-9430-4544-a45c-e6362d2c0fa2",
+      "id": "NODE_AGENT_FACTURACION",
       "name": "agente de facturacion"
     },
     {
@@ -235,7 +235,7 @@
         "text": "=**Fecha y hora actual:** {{ $now.toFormat('dd/MM/yyyy HH:mm') }} (Asunción, Paraguay)\n\n**El mensaje del usuario es:**  \n{{ $json.message.text }}\n\nEres el Chatbot oficial de E-Control y, al mismo tiempo, el IA ORQUESTADOR del sistema multi-agente.\n\nTu misión tiene 2 modos:\nA) MODO CONVERSACIÓN (cuando no hay consulta concreta o el usuario solo habla)\nB) MODO ORQUESTACIÓN (cuando hay una consulta que requiere datos)\n\n────────────────────────────────────────\nIDENTIDAD Y TONO\n────────────────────────────────────────\n- Hablas como E-Control: profesional, cálido, resolutivo.\n- Usas emojis con moderación (0 a 2 por mensaje, máximo 3 si el usuario está muy casual).\n- Varias tus saludos y cierres: NO repitas siempre la misma frase.\n- Palabrea de forma humana: frases naturales, no robóticas.\n- Nunca inventes datos. Si faltan datos, pregunta o deriva.\n\n────────────────────────────────────────\nDOMINIOS / HERRAMIENTAS DISPONIBLES\n────────────────────────────────────────\nPuedes enrutar consultas hacia estos sub-agentes (vía tool):\n1) FACTURACIÓN\n2) TESORERÍA\n3) PROYECTOS\n4) STOCK\n\nTu “inteligencia” principal es detectar intención por correlación semántica, no por palabras exactas.\nEjemplos:\n- “¿Qué tal la venta hoy?” → Facturación\n- “¿Cómo fue el año pasado en esta época?” → Facturación (comparación)\n- “¿Cómo va la caja / liquidez?” → Tesorería\n- “¿Estado del proyecto X?” → Proyectos\n- “¿Qué queda / qué falta / inventario?” → Stock\n\n────────────────────────────────────────\nREGLA DE ORO (CUÁNDO ORQUESTAR VS CUÁNDO CONVERSAR)\n────────────────────────────────────────\n1) Si el usuario hace una PREGUNTA OPERATIVA o de NEGOCIO que requiere datos → MODO ORQUESTACIÓN.\n2) Si el usuario solo saluda, conversa, pide ayuda general, o no es específico → MODO CONVERSACIÓN.\n3) Si es ambiguo entre 2 o más dominios → PREGUNTA DE ACLARACIÓN corta.\n\n────────────────────────────────────────\nMODO CONVERSACIÓN (NO USAR TOOLS)\n────────────────────────────────────────\nObjetivo: ser buen chatbot, guiar, hacer onboarding, y ayudar a formular consultas.\n\nComportamientos:\n- Saluda de forma variable y amigable.\n- Pregunta qué necesita y ofrece ejemplos útiles de lo que podés responder.\n- Si el usuario no sabe qué preguntar, proponé 3-5 ejemplos cortos (facturación/tesorería/proyectos/stock).\n- Mantén mensajes breves y claros.\n- No llames herramientas en este modo.\n\nEjemplo de propuesta:\n\"Podés preguntarme cosas como: ventas de hoy, comparaciones, estado de caja, avance de proyectos o stock de productos.\"\n\n────────────────────────────────────────\nMODO ORQUESTACIÓN (USAR TOOLS)\n────────────────────────────────────────\nObjetivo: enrutar, obtener output del sub-agente, y responder al usuario con claridad.\n\nPasos obligatorios:\n1) Detecta el dominio correcto (facturación/tesorería/proyectos/stock).\n2) Envía la consulta al sub-agente correspondiente.\n3) Recibe el output.\n4) Responde al usuario.\n\nReglas de respuesta:\n- NO inventes cifras ni completes información.\n- Puedes “envolver” el output con 1 frase humana breve (máximo 1-2 líneas) para que se sienta natural.\n- NO cambies el significado del output del sub-agente.\n- Si el sub-agente devuelve un mensaje de “no disponible”, lo transmites tal cual (puedes añadir una frase amable corta).\n\nFormato recomendado:\n- Una línea breve + output\nEj:\n\"Listo, acá va 👇\n{OUTPUT_DEL_SUBAGENTE}\"\n\n────────────────────────────────────────\nAMBIGÜEDAD (ACLARACIÓN MÍNIMA)\n────────────────────────────────────────\nSi no puedes decidir con confianza el dominio:\n- Haz una sola pregunta aclaratoria corta, sin explicar demasiado.\nEj:\n\"¿Te refieres a facturación, tesorería, proyectos o stock?\"\n\nSi el usuario mezcla dominios en una sola pregunta:\n- Divide en partes y enruta por separado, o pide aclaración si es demasiado amplio.\n\n────────────────────────────────────────\nVARIACIÓN DE SALUDOS Y CIERRES (NO REPETIR)\n────────────────────────────────────────\nRota de manera natural entre opciones como:\n- \"¡Hola! ¿Cómo puedo ayudarte hoy?\"\n- \"¡Buenas! Decime qué necesitás revisar 👇\"\n- \"Hey 👋 ¿Querés ver facturación, caja, proyectos o stock?\"\n- \"Dale, lo vemos. ¿Qué consulta tenés?\"\n\nCierres:\n- \"¿Querés que lo revise por fecha/rango?\"\n- \"¿Te muestro también la comparación vs el mes pasado?\"\n- \"Si me decís el período exacto, lo saco más fino.\"\n\n────────────────────────────────────────\nSEGURIDAD / CALIDAD\n────────────────────────────────────────\n- Si falta dato clave (fecha, rango, cliente, proyecto, producto), pregunta solo lo mínimo.\n- No hagas suposiciones sobre números.\n- No reveles lógica interna ni nombres técnicos de workflows.\n- Prioriza respuestas claras y útiles.\n\n",
         "options": {}
       },
-      "id": "520157ae-40a6-4f29-ac42-3fe26c4607e3",
+      "id": "NODE_ORQUESTADOR",
       "name": "IA ORQUESTADOR “E-Control” (SOCIAL + ROUTER)",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.7,
@@ -255,12 +255,12 @@
         -1488,
         736
       ],
-      "id": "22891141-d3ca-4fe2-a27f-6f3c12fb1e93",
+      "id": "NODE_LLM_FACTURACION",
       "name": "gpt oss",
       "credentials": {
         "openRouterApi": {
-          "id": "YdkBWfQNuPib1I01",
-          "name": "OpenRouter account"
+          "id": "CRED_OPENROUTER_ID_REDACTED",
+          "name": "OPENROUTER_CRED_NAME_REDACTED"
         }
       }
     },
@@ -275,7 +275,7 @@
         240,
         640
       ],
-      "id": "2419c1f6-dcbf-4f15-ba2f-43565d88dcd7",
+      "id": "NODE_AGENT_TESORERIA_PLACEHOLDER",
       "name": "tesoreria"
     },
     {
@@ -290,7 +290,7 @@
         16,
         736
       ],
-      "id": "36e7b19a-3f92-4ce9-a27a-235720497ebb",
+      "id": "NODE_MEMORY_TESORERIA",
       "name": "Simple Memory2"
     },
     {
@@ -304,12 +304,12 @@
         -176,
         736
       ],
-      "id": "cb148cc6-e6b0-4418-bf65-4d8e9a307697",
+      "id": "NODE_LLM_TESORERIA",
       "name": "gpt oss1",
       "credentials": {
         "openRouterApi": {
-          "id": "YdkBWfQNuPib1I01",
-          "name": "OpenRouter account"
+          "id": "CRED_OPENROUTER_ID_REDACTED",
+          "name": "OPENROUTER_CRED_NAME_REDACTED"
         }
       }
     },
@@ -324,7 +324,7 @@
         960,
         640
       ],
-      "id": "d3a29d1b-8b17-4a0a-9dc5-07cc9497d4a3",
+      "id": "NODE_AGENT_STOCK_PLACEHOLDER",
       "name": "ai agent stock"
     },
     {
@@ -338,12 +338,12 @@
         544,
         720
       ],
-      "id": "e25c5de9-b224-4978-867c-bcfebe13f950",
+      "id": "NODE_LLM_STOCK",
       "name": "gpt oss2",
       "credentials": {
         "openRouterApi": {
-          "id": "YdkBWfQNuPib1I01",
-          "name": "OpenRouter account"
+          "id": "CRED_OPENROUTER_ID_REDACTED",
+          "name": "OPENROUTER_CRED_NAME_REDACTED"
         }
       }
     },
@@ -359,7 +359,7 @@
         736,
         736
       ],
-      "id": "45e96a8e-d221-49bb-8682-8bc4b51f7a47",
+      "id": "NODE_MEMORY_STOCK",
       "name": "Simple Memory3"
     },
     {
@@ -373,7 +373,7 @@
         1824,
         688
       ],
-      "id": "719cfb42-c05f-4bca-96dd-b1327854f503",
+      "id": "NODE_AGENT_PROYECTOS_PLACEHOLDER",
       "name": "AI Agent proyectos"
     },
     {
@@ -388,7 +388,7 @@
         1584,
         768
       ],
-      "id": "00af2fcb-3b45-461b-88c7-d0f59966802c",
+      "id": "NODE_MEMORY_PROYECTOS",
       "name": "Simple Memory4"
     },
     {
@@ -402,12 +402,12 @@
         1296,
         768
       ],
-      "id": "413bc0b0-2aa0-4533-a7a2-3d6063a5e3f8",
+      "id": "NODE_LLM_PROYECTOS",
       "name": "gpt oss3",
       "credentials": {
         "openRouterApi": {
-          "id": "YdkBWfQNuPib1I01",
-          "name": "OpenRouter account"
+          "id": "CRED_OPENROUTER_ID_REDACTED",
+          "name": "OPENROUTER_CRED_NAME_REDACTED"
         }
       }
     },
@@ -415,9 +415,9 @@
       "parameters": {
         "name": "consultar_facturacion",
         "description": "Eres la herramienta SAP HOY.\n\nTu función es devolver la facturación correspondiente al día actual.\n\n- Consultas únicamente las facturas emitidas hoy.\n- No interpretas preguntas.\n- No tomas decisiones.\n- No generas texto explicativo ni conversacional.\n\nDevuelves exclusivamente los datos de facturación del día actual\n(fecha, hora de consulta, cantidad de facturas, total, promedios y moneda)\nen formato estructurado y consistente.\n\nNo agregues comentarios.\nNo modifiques los datos.\nNo hagas suposiciones.\n",
-        "workflowId": "9lRxTNkTdLKEhy65"
+        "workflowId": "WORKFLOW_ID_SAP_HOY_REDACTED"
       },
-      "id": "7f6289c4-fd11-4b69-9a14-0df75f1a6ac6",
+      "id": "NODE_SAP_HOY",
       "name": "sap_hoy",
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "typeVersion": 1.1,
@@ -431,9 +431,9 @@
         "description": "Eres la herramienta SAP PERIODOS ACTUALES.\n\nDevuelves la facturación correspondiente a:\n- semana actual\n- mes actual\n- año actual\n\n- No interpretas preguntas.\n- No decides qué período usar.\n- No generas texto explicativo.\n\nDevuelves los datos de los tres períodos en formato estructurado y consistente.\n\nNo agregues comentarios.\nNo modifiques los datos.\n",
         "workflowId": {
           "__rl": true,
-          "value": "T52OICkxRzoshBjZ",
+          "value": "WORKFLOW_ID_SAP_PERIODOS_ACTUALES_REDACTED",
           "mode": "list",
-          "cachedResultUrl": "/workflow/T52OICkxRzoshBjZ",
+          "cachedResultUrl": "/workflow/WORKFLOW_ID_SAP_PERIODOS_ACTUALES_REDACTED",
           "cachedResultName": "sap_periodos_actuales.py"
         },
         "workflowInputs": {
@@ -447,7 +447,7 @@
         -928,
         1056
       ],
-      "id": "5d8f5bfe-41da-416e-a53c-57dc620177a7",
+      "id": "NODE_SAP_PERIODOS",
       "name": "sap_periodos_actuales.py"
     },
     {
@@ -455,9 +455,9 @@
         "description": "Eres la herramienta SAP FECHA.\n\nDevuelves la facturación correspondiente a una fecha específica indicada como parámetro.\n\n- Consultas únicamente la fecha recibida.\n- No interpretas preguntas.\n- No decides rangos.\n- No generas texto explicativo.\n\nDevuelves los datos de facturación de esa fecha\nen formato estructurado y consistente.\n\nNo agregues comentarios.\nNo modifiques los datos.\n",
         "workflowId": {
           "__rl": true,
-          "value": "xYZEGyoTXfVeXYpO",
+          "value": "WORKFLOW_ID_SAP_FECHA_REDACTED",
           "mode": "list",
-          "cachedResultUrl": "/workflow/xYZEGyoTXfVeXYpO",
+          "cachedResultUrl": "/workflow/WORKFLOW_ID_SAP_FECHA_REDACTED",
           "cachedResultName": "sap_fecha.py"
         },
         "workflowInputs": {
@@ -475,7 +475,7 @@
         -784,
         1056
       ],
-      "id": "f161df83-1ea8-414d-82ab-009ad12ab24d",
+      "id": "NODE_SAP_FECHA",
       "name": "sap_fecha"
     },
     {
@@ -483,9 +483,9 @@
         "description": "Eres la herramienta SAP MENSUAL.\n\nDevuelves la facturación mensual de un año completo indicado como parámetro.\n\n- Agrupas los datos por mes.\n- No interpretas preguntas.\n- No decides el año.\n- No generas texto explicativo.\n\nDevuelves el resumen anual y el detalle mensual\nen formato estructurado y consistente.\n\nNo agregues comentarios.\nNo modifiques los datos.\n",
         "workflowId": {
           "__rl": true,
-          "value": "vtlrDJK9ynHWy5Pg",
+          "value": "WORKFLOW_ID_SAP_MENSUAL_REDACTED",
           "mode": "list",
-          "cachedResultUrl": "/workflow/vtlrDJK9ynHWy5Pg",
+          "cachedResultUrl": "/workflow/WORKFLOW_ID_SAP_MENSUAL_REDACTED",
           "cachedResultName": "sap_mensual"
         },
         "workflowInputs": {
@@ -503,7 +503,7 @@
         -672,
         1056
       ],
-      "id": "28d0ba10-eb42-4aaa-bbe6-43464c403f68",
+      "id": "NODE_SAP_MENSUAL",
       "name": "sap_mensual"
     },
     {
@@ -511,9 +511,9 @@
         "description": "Eres la herramienta SAP TOP CLIENTES.\n\nDevuelves el ranking de clientes por facturación según el período indicado.\n\n- Ordenas de mayor a menor facturación.\n- No interpretas preguntas.\n- No decides el período ni el límite.\n- No generas texto explicativo.\n\nDevuelves el ranking de clientes\nen formato estructurado y consistente.\n\nNo agregues comentarios.\nNo modifiques los datos.\n",
         "workflowId": {
           "__rl": true,
-          "value": "yumS0lQd7TMAbV0e",
+          "value": "WORKFLOW_ID_SAP_TOP_CLIENTES_REDACTED",
           "mode": "list",
-          "cachedResultUrl": "/workflow/yumS0lQd7TMAbV0e",
+          "cachedResultUrl": "/workflow/WORKFLOW_ID_SAP_TOP_CLIENTES_REDACTED",
           "cachedResultName": "sap_top_clientes"
         },
         "workflowInputs": {
@@ -531,7 +531,7 @@
         -544,
         1056
       ],
-      "id": "14557274-8735-4d72-a38f-a1d7685a5642",
+      "id": "NODE_SAP_TOP_CLIENTES",
       "name": "sap_top_clientes"
     },
     {
@@ -539,9 +539,9 @@
         "description": "Eres la herramienta SAP ANUAL.\n\nDevuelves la comparación de facturación entre el año actual y el año anterior\npara el mismo período.\n\n- No interpretas preguntas.\n- No decides fechas.\n- No generas texto explicativo.\n\nDevuelves los datos comparativos, diferencias y tendencia\nen formato estructurado y consistente.\n\nNo agregues comentarios.\nNo modifiques los datos.\n",
         "workflowId": {
           "__rl": true,
-          "value": "YloZxRn2h31BYkik",
+          "value": "WORKFLOW_ID_SAP_ANUAL_REDACTED",
           "mode": "list",
-          "cachedResultUrl": "/workflow/YloZxRn2h31BYkik",
+          "cachedResultUrl": "/workflow/WORKFLOW_ID_SAP_ANUAL_REDACTED",
           "cachedResultName": "sap_anual"
         },
         "workflowInputs": {
@@ -559,7 +559,7 @@
         -432,
         1056
       ],
-      "id": "5133a61f-4cb1-4d96-885f-04e50e04f479",
+      "id": "NODE_SAP_ANUAL",
       "name": "sap_anual"
     },
     {
@@ -567,10 +567,10 @@
         "description": "Eres la herramienta SAP TODOS LOS CLIENTES.\n\nDevuelves el resumen general y listado de clientes con su facturación.\n\n- No interpretas preguntas.\n- No aplicas rankings.\n- No decides filtros.\n- No generas texto explicativo.\n\nDevuelves los datos globales de clientes\nen formato estructurado y consistente.\n\nNo agregues comentarios.\nNo modifiques los datos.\n",
         "workflowId": {
           "__rl": true,
-          "value": "YloZxRn2h31BYkik",
+          "value": "WORKFLOW_ID_SAP_TODOS_CLIENTES_REDACTED",
           "mode": "list",
-          "cachedResultUrl": "/workflow/YloZxRn2h31BYkik",
-          "cachedResultName": "sap_anual"
+          "cachedResultUrl": "/workflow/WORKFLOW_ID_SAP_TODOS_CLIENTES_REDACTED",
+          "cachedResultName": "sap_todos_los_clientes"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -587,7 +587,7 @@
         -320,
         1056
       ],
-      "id": "ede6b2f3-6014-4cc9-833e-0e47c3da545d",
+      "id": "NODE_SAP_TODOS_CLIENTES",
       "name": "sap todos los clientes"
     }
   ],
@@ -902,11 +902,11 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "7bdd3807-d377-4106-80c8-a874705452b8",
+  "versionId": "VERSION_ID_REDACTED",
   "meta": {
     "templateCredsSetupCompleted": true,
-    "instanceId": "88112cc79542b40aa6f19b1583d08e53f2c8d4b047a458ac204c10e48bf309f6"
+    "instanceId": "INSTANCE_ID_REDACTED"
   },
-  "id": "gyWA3faHr7ri9zlt",
+  "id": "WORKFLOW_ID_REDACTED",
   "tags": []
 }
